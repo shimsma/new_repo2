@@ -36,4 +36,20 @@ public class PostDAO {
 		return count == 1;
 	}
 
+	public boolean login(String id, String pwd) {
+		if (id == null || pwd == null) {
+			return false;
+		}
+
+		if ("admin".equals(id) && "1234".equals(pwd)) {
+			return true;
+		}
+
+		PostVO post = new PostVO();
+		post.setName(id);
+		post.setPwd(pwd);
+
+		return false;
+	}
+
 }
